@@ -1,12 +1,19 @@
 ---
 name: User Story
-about: helps users fall asleep at bedtime
+about: Create a task via a user story
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-Once upon a time...
+### User Story
 
-... the end
+
+
+### Tasks
+- [ ] task 1
+
+
+### Design Reference
+[add image, video, or link when applicable]
