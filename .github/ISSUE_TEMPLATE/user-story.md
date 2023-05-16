@@ -7,13 +7,16 @@ assignees: ''
 
 ---
 
-### User Story
+# Criteria
+```
+Given when [x], then [y]
+```
 
 
+## Tasks
+- [ ] item 1
+- [ ] item 2
 
-### Tasks
-- [ ] task 1
 
-
-### Design Reference
+## Design Reference
 [add image, video, or link when applicable]
