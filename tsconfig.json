@@ -4,6 +4,7 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "esModuleInterop": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -17,6 +18,7 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],

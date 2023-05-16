@@ -13,9 +13,6 @@ dependencies:
   '@openzeppelin/test-helpers':
     specifier: ^0.5.16
     version: 0.5.16(bn.js@4.12.0)
-  '@thirdweb-dev/contracts':
-    specifier: ^3
-    version: 3.5.1
   '@web3auth/base':
     specifier: ^5.2.0
     version: 5.2.0(@babel/runtime@7.21.5)
@@ -28,9 +25,6 @@ dependencies:
   '@web3auth/openlogin-adapter':
     specifier: ^5.2.0
     version: 5.2.0(@babel/runtime@7.21.5)(@solana/web3.js@1.76.0)
-  ethers:
-    specifier: ^5.7.2
-    version: 5.7.2
   etherspot:
     specifier: ^1.43.2
     version: 1.43.2(ethers@5.7.2)(react@18.2.0)(reflect-metadata@0.1.13)(rxjs@6.6.2)
@@ -51,15 +45,45 @@ devDependencies:
   '@esbuild-plugins/node-modules-polyfill':
     specifier: ^0.2.2
     version: 0.2.2(esbuild@0.17.19)
+  '@ethersproject/abi':
+    specifier: ^5.4.7
+    version: 5.7.0
+  '@ethersproject/providers':
+    specifier: ^5.4.7
+    version: 5.7.2
+  '@nomicfoundation/hardhat-chai-matchers':
+    specifier: ^1.0.0
+    version: 1.0.6(@nomiclabs/hardhat-ethers@2.2.3)(chai@4.3.7)(ethers@5.7.2)(hardhat@2.14.0)
+  '@nomicfoundation/hardhat-network-helpers':
+    specifier: ^1.0.0
+    version: 1.0.8(hardhat@2.14.0)
   '@nomicfoundation/hardhat-toolbox':
     specifier: ^2.0.2
     version: 2.0.2(@ethersproject/abi@5.7.0)(@ethersproject/providers@5.7.2)(@nomicfoundation/hardhat-chai-matchers@1.0.6)(@nomicfoundation/hardhat-network-helpers@1.0.8)(@nomiclabs/hardhat-ethers@2.2.3)(@nomiclabs/hardhat-etherscan@3.1.7)(@typechain/ethers-v5@10.2.1)(@typechain/hardhat@6.1.6)(@types/chai@4.3.5)(@types/mocha@10.0.1)(@types/node@20.1.2)(chai@4.3.7)(ethers@5.7.2)(hardhat-gas-reporter@1.0.9)(hardhat@2.14.0)(solidity-coverage@0.8.2)(ts-node@10.9.1)(typechain@8.1.1)(typescript@5.0.4)
   '@nomiclabs/hardhat-ethers':
     specifier: ^2.2.3
     version: 2.2.3(ethers@5.7.2)(hardhat@2.14.0)
+  '@nomiclabs/hardhat-etherscan':
+    specifier: ^3.0.0
+    version: 3.1.7(hardhat@2.14.0)
   '@openzeppelin/hardhat-upgrades':
     specifier: ^1.25.1
     version: 1.25.1(@nomiclabs/hardhat-ethers@2.2.3)(@nomiclabs/hardhat-etherscan@3.1.7)(ethers@5.7.2)(hardhat@2.14.0)
+  '@typechain/ethers-v5':
+    specifier: ^10.1.0
+    version: 10.2.1(@ethersproject/abi@5.7.0)(@ethersproject/providers@5.7.2)(ethers@5.7.2)(typechain@8.1.1)(typescript@5.0.4)
+  '@typechain/hardhat':
+    specifier: ^6.1.2
+    version: 6.1.6(@ethersproject/abi@5.7.0)(@ethersproject/providers@5.7.2)(@typechain/ethers-v5@10.2.1)(ethers@5.7.2)(hardhat@2.14.0)(typechain@8.1.1)
+  '@types/chai':
+    specifier: ^4.2.0
+    version: 4.3.5
+  '@types/mocha':
+    specifier: '>=9.1.0'
+    version: 10.0.1
+  '@types/node':
+    specifier: '>=12.0.0'
+    version: 20.1.2
   '@types/react':
     specifier: ^18.0.28
     version: 18.0.28
@@ -78,6 +102,9 @@ devDependencies:
   buffer:
     specifier: ^6.0.3
     version: 6.0.3
+  chai:
+    specifier: ^4.2.0
+    version: 4.3.7
   eslint:
     specifier: ^8.38.0
     version: 8.38.0
@@ -87,8 +114,11 @@ devDependencies:
   eslint-plugin-react-refresh:
     specifier: ^0.3.4
     version: 0.3.4(eslint@8.38.0)
+  ethers:
+    specifier: ^5.7.2
+    version: 5.7.2
   hardhat:
-    specifier: ^2.10.1
+    specifier: ^2.14.0
     version: 2.14.0(ts-node@10.9.1)(typescript@5.0.4)
   hardhat-abi-exporter:
     specifier: ^2.10.1
@@ -117,8 +147,17 @@ devDependencies:
   rollup-plugin-node-polyfills:
     specifier: ^0.2.1
     version: 0.2.1
+  solidity-coverage:
+    specifier: ^0.8.0
+    version: 0.8.2(hardhat@2.14.0)
+  ts-node:
+    specifier: '>=8.0.0'
+    version: 10.9.1(@types/node@20.1.2)(typescript@5.0.4)
+  typechain:
+    specifier: ^8.1.0
+    version: 8.1.1(typescript@5.0.4)
   typescript:
-    specifier: ^5.0.2
+    specifier: ^5.0.4
     version: 5.0.4
   vite:
     specifier: ^4.3.2
@@ -1902,10 +1941,6 @@ packages:
       defer-to-connect: 2.0.1
     dev: false
 
-  /@thirdweb-dev/contracts@3.5.1:
-    resolution: {integrity: sha512-P2UPEGxyK/kUAFlr3XBLzlZYKVyoIyoujIGCXCzAJ4bxkiWdHaeWR3x1WRLqlaBvFUb8Ldz9cyEqTsXBtXGBuQ==}
-    dev: false
-
   /@toruslabs/base-controllers@2.9.0(@babel/runtime@7.21.5):
     resolution: {integrity: sha512-rKc+bR4QB/wdbH0CxLZC5e2PUZcIgkr9yY7TMd3oIffDklaYBnsuC5ES2/rgK1aRUDRWz+qWbTwLqsY6PlT37Q==}
     peerDependencies:
@@ -2840,7 +2875,7 @@ packages:
   /@walletconnect/window-metadata@1.0.0:
     resolution: {integrity: sha512-9eFvmJxIKCC3YWOL97SgRkKhlyGXkrHwamfechmqszbypFspaSk+t2jQXAEU7YClHF6Qjw5eYOmy1//zFi9/GA==}
     dependencies:
-      '@walletconnect/window-getters': 1.0.0
+      '@walletconnect/window-getters': 1.0.1
     dev: false
 
   /@walletconnect/window-metadata@1.0.1:
