@@ -1,7 +1,7 @@
 {
   "name": "@rmx/rmxhacks-001",
   "scripts": {
-    "dev": "npx hardhat node --watch",
+    "dev": "npx hardhat node",
     "test": "npx hardhat test",
     "build": "npx thirdweb@latest detect",
     "deploy": "npx thirdweb@latest deploy",
