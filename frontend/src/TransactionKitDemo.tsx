@@ -7,6 +7,7 @@ import {
   useEtherspotUi,
   useEtherspotAddresses,
   useEtherspotHistory,
+  EtherspotContractTransaction,
 } from '@etherspot/transaction-kit';
 import { useEffect, useState } from 'react';
 import { map, flow, compact } from 'lodash/fp';
@@ -42,6 +43,8 @@ function TransactionKitDemo() {
     })()
     return () => { }
   }, [getAccountTransactions])
+
+  const myContractAddress = `${process.env.VITE_MY_CONTRACT_ADDRESS}`;
 
   // accountTransactionHistory will now contain an array of history objects.
 
@@ -80,6 +83,7 @@ function TransactionKitDemo() {
         <h3>Create Transaction Batch</h3>
         <EtherspotBatches>
           <EtherspotBatch>
+            <EtherspotContractTransaction contractAddress={myContractAddress} methodName={'mintNFT'} abi={''} />
             <EtherspotTransaction
               to={address}
               value={amount}
