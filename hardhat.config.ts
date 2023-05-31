@@ -8,6 +8,8 @@ import 'hardhat-contract-sizer'
 import "hardhat-interact"
 import "hardhat-gas-trackooor"
 import 'hardhat-abi-exporter'
+import '@typechain/hardhat'
+import '@nomiclabs/hardhat-ethers'
 
 
 const config: HardhatUserConfig = {
