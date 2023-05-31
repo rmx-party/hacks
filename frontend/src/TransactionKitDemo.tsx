@@ -1,19 +1,23 @@
 import {
   EtherspotBatches,
   EtherspotBatch,
-  EtherspotTransaction,
   useEtherspotTransactions,
   useEtherspotBalances,
-  useEtherspotUi,
   useEtherspotAddresses,
   useEtherspotHistory,
   EtherspotContractTransaction,
 } from '@etherspot/transaction-kit';
 import { useEffect, useState } from 'react';
-import { map, flow, compact } from 'lodash/fp';
+import { map, } from 'lodash/fp';
 import { ethers } from 'ethers';
+import contractAbi from './abi/RMXhacks001.json';
 
 function TransactionKitDemo() {
+  const contractAddress = `${process.env.VITE_MY_CONTRACT_ADDRESS}`;
+  const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545');
+  const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+
+
 
   const { estimate, send } = useEtherspotTransactions();
   const etherspotAddresses = useEtherspotAddresses();
@@ -44,7 +48,6 @@ function TransactionKitDemo() {
     return () => { }
   }, [getAccountTransactions])
 
-  const myContractAddress = `${process.env.VITE_MY_CONTRACT_ADDRESS}`;
 
   // accountTransactionHistory will now contain an array of history objects.
 
@@ -73,7 +76,9 @@ function TransactionKitDemo() {
       </section>
 
       <section>
-        <h3>Your Smart Wallet Balance on Etherspot Mumbai</h3>
+        <h3>Your Smart Wallet Balance on Etherspot Mumbai
+          <small>(you may need to transfer some funds to this address to use it)</small>
+        </h3>
         <pre style={{ textAlign: 'left', fontSize: '8px' }}>
           {JSON.stringify(etherspotBalanceOnMumbai, null, 2)}
         </pre>
@@ -83,43 +88,11 @@ function TransactionKitDemo() {
         <h3>Create Transaction Batch</h3>
         <EtherspotBatches>
           <EtherspotBatch>
-            <EtherspotContractTransaction contractAddress={myContractAddress} methodName={'mintNFT'} abi={''} />
-            <EtherspotTransaction
-              to={address}
-              value={amount}
-            >
-              <input
-                type="text"
-                value={address}
-                onChange={(event) => setAddress(event.target.value)}
-              />
-              <input
-                type="text"
-                value={amount}
-                onChange={(event) => setAmount(event.target.value)}
-              />
-              <hr />
-              <button onClick={() => estimate()}>Estimate</button>
-              <button onClick={() => send()}>Send</button>
-            </EtherspotTransaction>
-            <EtherspotTransaction
-              to={address}
-              value={amount}
-            >
-              <input
-                type="text"
-                value={address}
-                onChange={(event) => setAddress(event.target.value)}
-              />
-              <input
-                type="text"
-                value={amount}
-                onChange={(event) => setAmount(event.target.value)}
-              />
-              <hr />
-              <button onClick={() => estimate()}>Estimate</button>
-              <button onClick={() => send()}>Send</button>
-            </EtherspotTransaction>
+            <EtherspotContractTransaction contractAddress={contractAddress} methodName={'mintNFT'} abi={contractAbi} />
+            <EtherspotContractTransaction contractAddress={contractAddress} methodName={'mintNFT'} abi={contractAbi} />
+            <hr />
+            <button onClick={() => estimate()}>Estimate</button>
+            <button onClick={() => send()}>Send</button>
           </EtherspotBatch>
         </EtherspotBatches>
       </section>
