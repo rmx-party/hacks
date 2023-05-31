@@ -7,6 +7,8 @@ import "hardhat-gas-reporter"
 import 'hardhat-contract-sizer'
 import "hardhat-interact"
 import "hardhat-gas-trackooor"
+import 'hardhat-abi-exporter'
+
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -19,6 +21,14 @@ const config: HardhatUserConfig = {
       }
     },
   },
+  abiExporter: {
+    path: './frontend/src/abi',
+    clear: true,
+    runOnCompile: true,
+    flat: true,
+    spacing: 2,
+    format: 'json'
+  }
 };
 
 export default config;
