@@ -82,7 +82,7 @@ function EtherSpotDemo() {
     etherSpotMain();
   }, [sdk, etherSpotMain])
 
-  const uiConsole = (foo) => { console.log(foo) };
+  const uiConsole = (...foo) => { console.log(...foo) };
 
   const login = async () => {
     if (!web3auth) {
@@ -91,7 +91,7 @@ function EtherSpotDemo() {
     }
     const web3authProvider = await web3auth.connect();
     setProvider(web3authProvider);
-    uiConsole("Logged in MAYBE Successfully!");
+    uiConsole("Logged in MAYBE Successfully! web3auth provider", web3authProvider);
   };
 
   const authenticateUser = async () => {

@@ -18,7 +18,6 @@ function TransactionKitDemo() {
   const contract = new ethers.Contract(contractAddress, contractAbi, provider);
 
 
-
   const { estimate, send } = useEtherspotTransactions();
   const etherspotAddresses = useEtherspotAddresses();
 
@@ -88,8 +87,9 @@ function TransactionKitDemo() {
         <h3>Create Transaction Batch</h3>
         <EtherspotBatches>
           <EtherspotBatch>
-            <EtherspotContractTransaction contractAddress={contractAddress} methodName={'mintNFT'} abi={contractAbi} />
-            <EtherspotContractTransaction contractAddress={contractAddress} methodName={'mintNFT'} abi={contractAbi} />
+            <EtherspotContractTransaction contractAddress={contractAddress} methodName={'mintNFT'} abi={contractAbi} >Mint One</EtherspotContractTransaction>
+            <br/>
+            <EtherspotContractTransaction contractAddress={contractAddress} methodName={'mintNFT'} abi={contractAbi} >Mint Two</EtherspotContractTransaction>
             <hr />
             <button onClick={() => estimate()}>Estimate</button>
             <button onClick={() => send()}>Send</button>
