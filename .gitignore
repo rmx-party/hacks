@@ -1,3 +1,6 @@
+cache/**
+
+
 # Logs
 logs
 *.log
