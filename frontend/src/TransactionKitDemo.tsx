@@ -5,6 +5,7 @@ import {
   useEtherspotBalances,
   useEtherspotAddresses,
   useEtherspotHistory,
+  useEtherspotUtils,
   EtherspotContractTransaction,
 } from '@etherspot/transaction-kit';
 import { useEffect, useState } from 'react';
@@ -14,10 +15,12 @@ import contractAbi from './abi/RMXhacks001.json';
 
 function TransactionKitDemo() {
   const contractAddress = `${process.env.VITE_MY_CONTRACT_ADDRESS}`;
-  const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545');
-  const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+  // const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545');
+  // const contract = new ethers.Contract(contractAddress, contractAbi, provider);
 
 
+
+  // const utils = useEtherspotUtils();
   const { estimate, send } = useEtherspotTransactions();
   const etherspotAddresses = useEtherspotAddresses();
 
