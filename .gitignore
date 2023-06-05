@@ -1,3 +1,6 @@
+cache/**
+typechain-types/**
+
 # Logs
 logs
 *.log

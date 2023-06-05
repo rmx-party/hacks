@@ -29,8 +29,15 @@ import { Sdk, SessionStorage, randomPrivateKey } from 'etherspot';
 
 
 
+const clientId = import.meta.env.VITE_WEB3_AUTH_CLIENT_ID; // Get your Client ID from Web3Auth Dashboard
 const web3AuthNetwork = "testnet";
 const chainId = "0x5"; // see https://chainlist.org/?testnets=true -- 0x5 is goerli, 0x1 is ethereum
+const config = {
+  clientId,
+  web3AuthNetwork,
+  chainId,
+}
+console.log(`config:`, config);
 
 function EtherSpotDemo() {
 
@@ -39,7 +46,7 @@ function EtherSpotDemo() {
   // const [torusPlugin, setTorusPlugin] = useState<TorusWalletConnectorPlugin | null>(null);
   const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(null);
 
-  const [idToken, setIdToken] = useState(null);
+  const [idToken, setIdToken] = useState<string | null>(null);
 
   const [sdk, setSdk] = useState<Sdk | null>(null);
 
@@ -75,7 +82,7 @@ function EtherSpotDemo() {
     etherSpotMain();
   }, [sdk, etherSpotMain])
 
-  const uiConsole = (foo) => { console.log(foo) };
+  const uiConsole = (...foo) => { console.log(...foo) };
 
   const login = async () => {
     if (!web3auth) {
@@ -84,7 +91,7 @@ function EtherSpotDemo() {
     }
     const web3authProvider = await web3auth.connect();
     setProvider(web3authProvider);
-    uiConsole("Logged in MAYBE Successfully!");
+    uiConsole("Logged in MAYBE Successfully! web3auth provider", web3authProvider);
   };
 
   const authenticateUser = async () => {
@@ -99,8 +106,8 @@ function EtherSpotDemo() {
 
   useEffect(() => {
     const authInstance= new Web3Auth({
-      clientId: "BFtC4cWQQ6nxVmWdQ1Hi-rqGPUQYP6FENOTXJda-D4Tx2r7g9M1JzEzxW_wwbVM2-73VAdcgCQQcnzzDcOyJxg8", // Get your Client ID from Web3Auth Dashboard
-      web3AuthNetwork,
+      clientId: clientId,
+      web3AuthNetwork: web3AuthNetwork,
       chainConfig: {
         chainNamespace: CHAIN_NAMESPACES.EIP155,
         chainId,
