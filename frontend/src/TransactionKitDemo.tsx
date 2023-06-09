@@ -13,10 +13,10 @@ import { map, } from 'lodash/fp';
 import { ethers } from 'ethers';
 import contractAbi from './abi/RMXhacks001.json';
 
-function TransactionKitDemo() {
+function TransactionKitDemo({ authProvider } ) {
   const contractAddress = `${process.env.VITE_MY_CONTRACT_ADDRESS}`;
   // const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545');
-  // const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+  // const contract = new ethers.Contract(contractAddress, contractAbi, authProvider);
 
 
 
@@ -35,9 +35,6 @@ function TransactionKitDemo() {
   // }, [etherspotAddresses]);
 
   const etherspotBalanceOnMumbai = useEtherspotBalances(80001);
-
-  const [address, setAddress] = useState('0x271Ae6E03257264F0F7cb03506b12A027Ec53B31');
-  const [amount, setAmount] = useState('0.001');
 
   const [transactionHistory, setTransactionHistory] = useState<any[]>([]);
   const { getAccountTransactions } = useEtherspotHistory();

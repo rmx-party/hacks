@@ -39,7 +39,7 @@ const config = {
 }
 console.log(`config:`, config);
 
-function EtherSpotDemo() {
+function EtherSpotDemo({authCallback}) {
 
 
   const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
@@ -91,6 +91,7 @@ function EtherSpotDemo() {
     }
     const web3authProvider = await web3auth.connect();
     setProvider(web3authProvider);
+    authCallback(web3authProvider);
     uiConsole("Logged in MAYBE Successfully! web3auth provider", web3authProvider);
   };
 
