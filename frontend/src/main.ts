@@ -41,13 +41,12 @@ const afterLogout = async (state) => {
   console.log(`afterLogout`, state)
   document.querySelector<HTMLSpanElement>('#address')!.textContent = 'Not logged in'
   document.querySelector<HTMLSpanElement>('#balance')!.textContent = '0.00'
-  //disable mint button
   document.querySelector<HTMLButtonElement>('#mint')!.setAttribute('disabled', 'disabled')
 }
 const afterLogin = async (state) => {
   console.log(`afterLogin`, state)
   const address = await fetchAddress()
   fetchBalance(address)
-  // setupMintBtn(document.querySelector<HTMLButtonElement>('#mint')!)
+  setupMintBtn(document.querySelector<HTMLButtonElement>('#mint')!)
 }
 setupLoginBtn(document.querySelector<HTMLButtonElement>('#login')!, afterLogin, afterLogout)
