@@ -4,15 +4,18 @@ import { magic } from './magic'
 
 const web3 = new Web3(magic.rpcProvider)
 const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS
+console.log(`contract:`, contractAddress)
 if (!(contractAddress?.length > 0)) { throw new Error(`ENV var VITE_CONTRACT_ADDRESS not set`) }
 const contract = new web3.eth.Contract(abi, contractAddress)
 
-export function setupMintBtn(element: HTMLButtonElement) {
+export async function setupMintBtn(element: HTMLButtonElement) {
   console.log(`mint setup`, magic, contract)
   let button = element
 
   const startMint = async () => {
-    const receipt = await contract.methods.mintNFT().send({ from: magic.rpcProvider.selectedAddress })
+    console.log(`web3`, web3)
+    const accounts = await web3.eth.getAccounts()
+    const receipt = await contract.methods.mintNFT().send({ from: accounts[0] })
     console.log(`mint`, receipt, magic, contract)
   }
 
@@ -23,7 +26,7 @@ export function setupMintBtn(element: HTMLButtonElement) {
     button.removeAttribute('disabled')
   }
 
-  if (magic.user.isLoggedIn()) {
+  if (await magic.user.isLoggedIn()) {
     renderMint()
     button.removeAttribute('disabled')
   }
