@@ -19,7 +19,7 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {},
     mumbai: {
-      url: "https://rpc-mumbai.maticvigil.com",
+      url: "https://endpoints.omniatech.io/v1/matic/mumbai/public	",
       accounts: [`0x${process.env.RMXHACKS_PRIVATE_KEY}`],
     }
   },
