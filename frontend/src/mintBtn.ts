@@ -28,10 +28,10 @@ export async function setupMintBtn(element: HTMLButtonElement) {
     if (!tokenId) return;
 
     // TODO: switch to mainnet based on network
-    const openSeaLink = `https://testnets.opensea.io/assets/${contractAddress}/${tokenId}`
+    const openSeaLink = `https://testnets.opensea.io/assets/mumbai/${contractAddress}/${tokenId}`
 
     console.log(`openSeaLink`, openSeaLink)
-    const nft = document.createElement('div')
+    const nft = document.querySelector<HTMLDivElement>('#nfts')
     nft.innerHTML = `<a href="${openSeaLink}" target="_blank">View ${tokenId} on OpenSea</a>`
   }
 

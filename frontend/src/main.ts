@@ -35,6 +35,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <span id="balance">0.00</span> MATIC
       </div>
   </div>
+  <div id="nfts"></div>
 `
 
 const afterLogout = async (state) => {
