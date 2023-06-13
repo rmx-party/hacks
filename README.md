@@ -19,7 +19,7 @@ TODO
 - `pnpm build` (hardhat compile, generates contract artifacts and others like typechain types etc)
 - from hardhat root, `pnpm dev` should run a local rpc for testing. you can deploy contracts to this, perform test transactions and contract interactions, etc.
 - from frontend root, `pnpm dev` runs the vite dev server for local testing with HMR
-- 
+- from hardhat root, `npx hardhat run <script file>` to run a deploy script, which is JS written case by case
 
 
 ## deployment
