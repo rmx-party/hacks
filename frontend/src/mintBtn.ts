@@ -17,6 +17,22 @@ export async function setupMintBtn(element: HTMLButtonElement) {
     const accounts = await web3.eth.getAccounts()
     const receipt = await contract.methods.mintNFT().send({ from: accounts[0] })
     console.log(`mint`, receipt, magic, contract)
+
+    if (receipt.status) { // TODO: this probably belongs somewhere else
+      renderNfts(receipt)
+    }
+  }
+
+  const renderNfts = async (receipt) => {
+    const tokenId = receipt?.events?.Transfer?.returnValues?.tokenId
+    if (!tokenId) return;
+
+    // TODO: switch to mainnet based on network
+    const openSeaLink = `https://testnets.opensea.io/assets/${contractAddress}/${tokenId}`
+
+    console.log(`openSeaLink`, openSeaLink)
+    const nft = document.createElement('div')
+    nft.innerHTML = `<a href="${openSeaLink}" target="_blank">View ${tokenId} on OpenSea</a>`
   }
 
   const renderMint = () => {
