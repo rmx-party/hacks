@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.0.9
     version: 0.0.9
   '@openzeppelin/contracts':
-    specifier: ^4.8.3
-    version: 4.8.3
+    specifier: ^4.9.3
+    version: 4.9.3
   '@openzeppelin/contracts-upgradeable':
     specifier: ^4.8.3
     version: 4.8.3
@@ -124,7 +124,7 @@ packages:
   /@a16z/contracts@0.0.9:
     resolution: {integrity: sha512-Aj0oov1iLSPE4n6zAknQ6zoLniXazlcYlTwKPymEoyT3cQKbFaRnWE9EcVmYjASLTAzpWL3rnJkNmbYpIIwTlA==}
     dependencies:
-      '@openzeppelin/contracts': 4.8.3
+      '@openzeppelin/contracts': 4.9.3
     dev: false
 
   /@aws-crypto/sha256-js@1.2.2:
@@ -1266,8 +1266,8 @@ packages:
     resolution: {integrity: sha512-SXDRl7HKpl2WDoJpn7CK/M9U4Z8gNXDHHChAKh0Iz+Wew3wu6CmFYBeie3je8V0GSXZAIYYwUktSrnW/kwVPtg==}
     dev: false
 
-  /@openzeppelin/contracts@4.8.3:
-    resolution: {integrity: sha512-bQHV8R9Me8IaJoJ2vPG4rXcL7seB7YVuskr4f+f5RyOStSZetwzkWtoqDMl5erkBJy0lDRUnIR2WIkPiC0GJlg==}
+  /@openzeppelin/contracts@4.9.3:
+    resolution: {integrity: sha512-He3LieZ1pP2TNt5JbkPA4PNT9WC3gOTOlDcFGJW4Le4QKqwmiNJCRt44APfxMxvq7OugU/cqYuPcSBzOw38DAg==}
     dev: false
 
   /@openzeppelin/hardhat-upgrades@1.25.1(@nomiclabs/hardhat-ethers@2.2.3)(@nomiclabs/hardhat-etherscan@3.1.7)(ethers@5.7.2)(hardhat@2.14.0):
@@ -1994,6 +1994,7 @@ packages:
   /amdefine@1.0.1:
     resolution: {integrity: sha512-S2Hw0TtNkMJhIabBwIojKL9YHO5T0n5eNqWJ7Lrlel/zDbftQpxpapi8tZs3X1HWa+u+QeydGmzzNU0m09+Rcg==}
     engines: {node: '>=0.4.2'}
+    requiresBuild: true
     dev: true
     optional: true
 
