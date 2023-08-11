@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -12,8 +12,8 @@ dependencies:
     specifier: ^4.8.3
     version: 4.8.3
   '@openzeppelin/contracts-upgradeable':
-    specifier: ^4.8.3
-    version: 4.8.3
+    specifier: ^4.9.3
+    version: 4.9.3
   '@openzeppelin/test-helpers':
     specifier: ^0.5.16
     version: 0.5.16(bn.js@4.12.0)
@@ -1262,8 +1262,8 @@ packages:
       fs-extra: 8.1.0
     dev: false
 
-  /@openzeppelin/contracts-upgradeable@4.8.3:
-    resolution: {integrity: sha512-SXDRl7HKpl2WDoJpn7CK/M9U4Z8gNXDHHChAKh0Iz+Wew3wu6CmFYBeie3je8V0GSXZAIYYwUktSrnW/kwVPtg==}
+  /@openzeppelin/contracts-upgradeable@4.9.3:
+    resolution: {integrity: sha512-jjaHAVRMrE4UuZNfDwjlLGDxTHWIOwTJS2ldnc278a0gevfXfPr8hxKEVBGFBE96kl2G3VHDZhUimw/+G3TG2A==}
     dev: false
 
   /@openzeppelin/contracts@4.8.3:
@@ -1994,6 +1994,7 @@ packages:
   /amdefine@1.0.1:
     resolution: {integrity: sha512-S2Hw0TtNkMJhIabBwIojKL9YHO5T0n5eNqWJ7Lrlel/zDbftQpxpapi8tZs3X1HWa+u+QeydGmzzNU0m09+Rcg==}
     engines: {node: '>=0.4.2'}
+    requiresBuild: true
     dev: true
     optional: true
 
